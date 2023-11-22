@@ -7,21 +7,21 @@ API Routes
 
 Books
 GET /books: Retrieve a list of all books.
-GET /book/:id: Retrieve details of a specific book by id.
+GET /book/:bookId: Retrieve details of a specific book by bookId.
 POST /books: Add a new book.
-PUT /book/:id: Update details of a specific book by id.
-DELETE /book/:id: Delete a specific book by id.
+PUT /book/:bookId: Update details of a specific book by bookId.
+DELETE /book/:bookId: Delete a specific book by bookId.
 
 Video Games
 GET /videoGames: Retrieve a list of all video games.
-GET /videoGame/:id: Retrieve details of a specific video game by id.
+GET /videoGame/:gameId: Retrieve details of a specific video game by gameId.
 POST /videoGames: Add a new video game.
-PUT /videoGame/:id: Update details of a specific video game by id.
-DELETE /videoGame/:id: Delete a specific video game by id.
+PUT /videoGame/:gameId: Update details of a specific video game by gameId.
+DELETE /videoGame/:gameId: Delete a specific video game by gameId.
 
 Movies
 GET /movies: Retrieve a list of all movies.
-GET /movie/:id: Retrieve details of a specific movie by id.
+GET /movie/:movieId: Retrieve details of a specific movie by movieId.
 POST /movies: Add a new movie.
-PUT /movie/:id: Update details of a specific movie by id.
-DELETE /movie/:id: Delete a specific movie by id.
+PUT /movie/:movieId: Update details of a specific movie by movieId.
+DELETE /movie/:movieId: Delete a specific movie by movieId.
