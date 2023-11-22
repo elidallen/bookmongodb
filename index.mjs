@@ -6,19 +6,20 @@ import { createMovies } from './data/createMovies.mjs';
 import { createVideoGames } from './data/createVideoGames.mjs';
 import { connectToMongoDB, getDB } from './db/connection.mjs';
 import { removeDuplicatesFromCollections } from './duplicates/removeDuplicates.mjs';
+import Book from './models/book.mjs';
+import Movie from './models/movie.mjs';
+import VideoGame from './models/videoGame.mjs';
 import { handleBooksRequest } from './routes/books.mjs';
 import { handleMoviesRequest } from './routes/movies.mjs';
 import { handleVideoGamesRequest } from './routes/videoGames.mjs';
 
+
+
 const app = express();
 const PORT = 3000;
 
-
-
 async function startServer() {
   try {
-    
-   
     // Connect to MongoDB
     await connectToMongoDB();
 
@@ -31,11 +32,13 @@ async function startServer() {
 
       // Set up middleware
       app.use(bodyParser.json());
-
+        
+      // Call the function to create books after connecting to MongoDB
       await createBooks();
       await createVideoGames();
       await createMovies();
       await removeDuplicatesFromCollections(Book, VideoGame, Movie);
+
       // Handle books requests
       app.route(['/books', '/book/:id?']).all(handleBooksRequest);
       app.all(['/videogame/:id?', '/videoGames/:id?'], handleVideoGamesRequest);

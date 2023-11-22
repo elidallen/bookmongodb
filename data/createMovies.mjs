@@ -56,11 +56,16 @@ const moviesData = [
   },
 ];
 
+
 export async function createMovies() {
   try {
     const createdMovies = await Movie.create(moviesData);
     console.log('Movies created:', createdMovies);
   } catch (error) {
-    console.error('Error creating movies:', error);
+    if (error.code === 11000) {
+      console.warn('Some movies already exist with the same IDs. Skipping insertion.');
+    } else {
+      console.error('Error creating movies:', error);
+    }
   }
 }

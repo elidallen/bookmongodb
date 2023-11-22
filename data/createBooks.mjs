@@ -57,7 +57,7 @@ export async function createBooks() {
 
     if (existingBooks.length > 0) {
       console.warn('Some books already exist with the same IDs. Skipping insertion.');
-      return;
+      return;  // Skip the insertion if there are existing books
     }
 
     // Insert books only if there are no duplicates
@@ -68,5 +68,4 @@ export async function createBooks() {
   }
 }
 
-// Call the function to create books
-createBooks();
+

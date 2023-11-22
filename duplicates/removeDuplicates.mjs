@@ -1,7 +1,4 @@
 import mongoose from 'mongoose';
-import Book from '../models/book.mjs';
-import Movie from '../models/movie.mjs';
-import VideoGame from '../models/videoGame.mjs';
 
 async function removeDuplicatesFromCollections(...collections) {
   try {
@@ -44,8 +41,6 @@ async function removeDuplicatesFromCollections(...collections) {
   }
 }
 
-// Usage
-await removeDuplicatesFromCollections(Book, VideoGame, Movie);
 
 // Export the removeDuplicatesFromCollections function
 export { removeDuplicatesFromCollections };

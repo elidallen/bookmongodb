@@ -52,8 +52,12 @@ const videoGamesData = [
 export async function createVideoGames() {
   try {
     const createdVideoGames = await VideoGame.create(videoGamesData);
-    console.log('Video Games created:', createdVideoGames);
+    console.log('Video games created:', createdVideoGames);
   } catch (error) {
-    console.error('Error creating video games:', error);
+    if (error.code === 11000) {
+      console.warn('Some video games already exist with the same IDs. Skipping insertion.');
+    } else {
+      console.error('Error creating video games:', error);
+    }
   }
 }
