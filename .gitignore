@@ -1,29 +1,8 @@
 # Node.js
 node_modules/
 
-# Logs
-logs/
-*.log
-
-# Dependency directories
-jspm_packages/
-bower_components/
 
 # Environment variables
 .env
 
-# macOS
-.DS_Store
 
-# Visual Studio Code
-.vscode/
-
-# MongoDB data directory
-
-# Build artifacts
-dist/
-build/
-
-# npm package files
-package-lock.json
-npm-debug.log
