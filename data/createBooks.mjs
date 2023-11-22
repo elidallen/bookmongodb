@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Book from '../models/book.js'; // Adjust the path based on your project structure
+import Book from '../models/book.mjs'; // Adjust the path based on your project structure
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://fakey:1805allen13@cluster0.xuoyq4t.mongodb.net/library', {});
@@ -44,7 +44,7 @@ const booksData = [
 ];
 
 // Save each book to the database
-async function createBooks() {
+export async function createBooks() {
   try {
     const createdBooks = await Book.create(booksData);
     console.log('Books created:', createdBooks);
